@@ -1,0 +1,6 @@
+.idea
+.env.local
+.next
+node_modules
+__generated__
+build

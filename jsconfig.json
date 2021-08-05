@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {},
+        "jsx": "react",
+        "target": "es2020"
+    },
+    "exclude": ["**/node_modules/**", "build", ".next", "__generated__"]
+}

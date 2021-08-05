@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "window": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "extends": ["airbnb", "next", "plugin:prettier/recommended", "plugin:react/recommended", "plugin:relay/recommended"],
+    "plugins": ["babel", "prettier", "import", "react", "react-hooks", "relay"],
+    "rules": {
+        "react/jsx-props-no-spreading": 0,
+        "react/forbid-prop-types": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "relay/graphql-syntax": "error",
+        "relay/compat-uses-vars": "warn",
+        "relay/graphql-naming": "error",
+        "relay/must-colocate-fragment-spreads": "warn",
+        "relay/no-future-added-value": "warn",
+        "relay/unused-fields": "warn",
+        "relay/generated-flow-types": 0,
+        "prettier/prettier": "error",
+        "import/no-unresolved": 0,
+        "consistent-return": 0,
+        "no-underscore-dangle": 0,
+        "no-empty": 0
+    },
+    "settings": {
+        "react": {
+            "version": "detect",
+            "import/core-modules": ["styled-jsx/css"]
+        }
+    }
+}

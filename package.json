@@ -1,0 +1,47 @@
+{
+    "name": "github",
+    "version": "1.0.0",
+    "description": "Github issues tracker.",
+    "main": "index.js",
+    "repository": "https://github.com/youhosi/github-issues.git",
+    "author": "youhosi <sebastiansycz99@icloud.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "relay": "relay-compiler",
+        "start": "NODE_OPTIONS=\"--inspect\" next dev",
+        "build": "next build",
+        "production": "next start"
+    },
+    "dependencies": {
+        "@primer/octicons-react": "^14.2.2",
+        "next": "^11.0.1",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-relay": "^11.0.2",
+        "relay-runtime": "^11.0.2"
+    },
+    "devDependencies": {
+        "@styled-jsx/plugin-sass": "^3.0.0",
+        "babel-eslint": "^10.1.0",
+        "babel-plugin-relay": "^11.0.2",
+        "eslint": "^7.30.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-next": "^11.0.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-babel": "^5.3.1",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-relay": "^1.8.2",
+        "graphql": "^15.5.1",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.2",
+        "relay-compiler": "^11.0.2",
+        "relay-config": "^11.0.2",
+        "sass": "^1.35.1"
+    }
+}

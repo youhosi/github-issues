@@ -11,7 +11,7 @@ export const relaySSR = __SERVER__ && require("./ssr").default;
 export {
     RelayEnvironmentProvider,
     useRelayEnvironment,
-    useLazyLoadQuery,
+    usePreloadedQuery,
     usePaginationFragment,
     useRefetchableFragment,
     useFragment,

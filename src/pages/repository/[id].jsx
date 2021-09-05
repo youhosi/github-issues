@@ -1,46 +1,47 @@
 import React from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { relaySSR, fetchQuery, graphql, useLazyLoadQuery } from "lib/relay";
+import PropTypes from "prop-types";
 
-const repositoryQuery = graphql`
-    query Id_repositoryQuery($repositoryId: ID!) {
-        repository: node(id: $repositoryId) {
-            ... on Repository {
-                id
-                name
+import { useLazyLoadQuery, graphql, relaySSR, fetchQuery } from "lib/relay";
+
+const RepositoryIdPage = ({ repositoryId }) => {
+    const { repository } = useLazyLoadQuery(
+        graphql`
+            query Id_repositoryQuery($repositoryId: ID!) {
+                repository: node(id: $repositoryId) {
+                    ... on Repository {
+                        name
+                        description
+                    }
+                }
             }
-        }
-    }
-`;
-
-const RepositoryId = (props) => {
-    const { id } = useRouter().query;
-    // const data = useLazyLoadQuery(repositoryQuery, { repositoryId: id }, { fetchPolicy: "store-only" });
+        `,
+        { repositoryId },
+        { fetchPolicy: "store-or-network" }
+    );
 
     return (
-        <div>
-            <Link href="/repository/test">Test</Link> <br />
-            Page: {props.test}
-        </div>
+        <>
+            <span>Github issue: {repository.name}</span>
+            <span>{repository.description}</span>
+        </>
     );
 };
 
-export const getServerSideProps = relaySSR(async (context) => {
-    // const { query, environment } = context;
+export const getServerSideProps = relaySSR(async ({ query, environment }) => {
+    const repositoryIdQuery = await import("generated/relay/Id_repositoryQuery.graphql");
+    const { id: repositoryId } = query;
 
-    // await fetchQuery(
-    //     environment,
-    //     repositoryQuery,
-    //     { repositoryId: query.id },
-    //     { fetchPolicy: "network-only" }
-    // ).toPromise();
+    await fetchQuery(environment, repositoryIdQuery, { repositoryId }, { fetchPolicy: "network-only" }).toPromise();
 
     return {
         props: {
-            test: `@@@ TEST @@@ ${Date.now()}`,
+            repositoryId,
         },
     };
 });
 
-export default RepositoryId;
+RepositoryIdPage.propTypes = {
+    repositoryId: PropTypes.string.isRequired,
+};
+
+export default RepositoryIdPage;

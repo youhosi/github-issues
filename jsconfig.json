@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": "./src",
-        "paths": {},
+        "paths": {
+            "components/*": ["components/*"],
+            "lib/*": ["lib/*"],
+            "theme/*": ["theme/*"]
+        },
         "jsx": "react",
         "target": "es2020"
     },

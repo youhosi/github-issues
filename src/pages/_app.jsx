@@ -1,14 +1,14 @@
 import "theme/normalize.css";
 import "theme/global.css";
 
-import React, { useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 
 import { RelayEnvironmentProvider, relayClientEnvironment } from "lib/relay";
 
 const App = ({ Component, pageProps: { relay, ...props } }) => {
-    const environment = useMemo(() => relayClientEnvironment(relay), []);
+    const environment = relayClientEnvironment(relay);
 
     return (
         <>

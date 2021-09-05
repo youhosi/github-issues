@@ -4,6 +4,7 @@
         "paths": {
             "components/*": ["components/*"],
             "lib/*": ["lib/*"],
+            "generated/*": ["../__generated__/*"],
             "theme/*": ["theme/*"]
         },
         "jsx": "react",

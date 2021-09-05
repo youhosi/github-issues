@@ -15,13 +15,7 @@
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    "extends": [
-        "airbnb",
-        "next",
-        "plugin:prettier/recommended",
-        "plugin:react/recommended",
-        "plugin:relay/recommended"
-    ],
+    "extends": ["airbnb", "plugin:prettier/recommended", "plugin:react/recommended", "plugin:relay/recommended"],
     "plugins": ["babel", "prettier", "import", "react", "react-hooks", "relay"],
     "rules": {
         "react/jsx-props-no-spreading": 0,

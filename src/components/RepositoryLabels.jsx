@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { PlusIcon } from "@primer/octicons-react";
 
 import { graphql, useFragment } from "lib/relay";
-import { colors } from "../theme/theme";
+import { colors } from "theme/theme";
 
 const RepositoryLabels = ({ repository }) => {
     const data = useFragment(

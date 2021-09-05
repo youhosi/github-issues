@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import Repository from "components/Repository";
 import FetchMoreButton from "components/FetchMoreButton";
-import { colors } from "theme/theme";
 import { graphql, usePaginationFragment } from "lib/relay";
+import { colors } from "theme/theme";
 
 const Repositories = ({ viewer }) => {
     const { data, hasNext, isLoadingNext, loadNext } = usePaginationFragment(

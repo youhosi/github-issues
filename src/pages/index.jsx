@@ -8,7 +8,7 @@ const IndexPage = () => {
         graphql`
             query pages_indexQuery {
                 viewer {
-                    ...RepositoriesFragment
+                    ...Repositories
                 }
             }
         `,
@@ -18,11 +18,7 @@ const IndexPage = () => {
 
     return (
         <div className="container">
-            <div className="repositories">
-                <h2>Repositories</h2>
-
-                <Repositories viewer={data.viewer} />
-            </div>
+            <Repositories viewer={data.viewer} />
 
             <div className="recent-issues">
                 <h2>Recent Issues</h2>

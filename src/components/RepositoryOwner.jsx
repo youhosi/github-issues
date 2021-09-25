@@ -7,7 +7,7 @@ import { graphql, useFragment } from "lib/relay";
 const RepositoryOwner = ({ owner }) => {
     const data = useFragment(
         graphql`
-            fragment RepositoryOwnerFragment on Repository {
+            fragment RepositoryOwner on Repository {
                 owner {
                     avatarUrl
                     login

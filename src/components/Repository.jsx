@@ -11,11 +11,11 @@ import { colors } from "theme/theme";
 const Repository = ({ repository }) => {
     const { repositoryId, name, ...data } = useFragment(
         graphql`
-            fragment RepositoryFragment on Repository {
+            fragment Repository on Repository {
                 repositoryId: id
                 name
-                ...RepositoryLabelsFragment
-                ...RepositoryOwnerFragment
+                ...RepositoryLabels
+                ...RepositoryOwner
             }
         `,
         repository
@@ -51,11 +51,11 @@ const Repository = ({ repository }) => {
                         overflow: hidden;
 
                         &:first-child {
-                            border-radius: 4px 4px 0 0;
+                            border-radius: 6px 6px 0 0;
                         }
 
                         &:last-child {
-                            border-radius: 0 0 4px 4px;
+                            border-radius: 0 0 6px 6px;
                         }
                     }
 

@@ -8,7 +8,7 @@ import { colors } from "theme/theme";
 const RepositoryLabels = ({ repository }) => {
     const data = useFragment(
         graphql`
-            fragment RepositoryLabelsFragment on Repository {
+            fragment RepositoryLabels on Repository {
                 labels(first: 3) {
                     edges {
                         node {

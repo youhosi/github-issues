@@ -20,5 +20,6 @@ module.exports = {
                 artifactDirectory: "./__generated__/relay/",
             },
         ],
+        "transform-flow-strip-types",
     ],
 };
